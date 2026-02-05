@@ -18,7 +18,7 @@ Add to your `~/.config/opencode/opencode.json`:
 ```json
 {
   "plugin": [
-    "github:YOUR_USERNAME/opencode-bmad-build-cycle"
+    "github:Jack-R-Hong/opencode-bmad-build-cycle"
   ]
 }
 ```
@@ -44,7 +44,7 @@ Then add to `opencode.json`:
 Clone and link locally:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle.git
+git clone https://github.com/Jack-R-Hong/opencode-bmad-build-cycle.git
 cd opencode-bmad-build-cycle
 npm install
 npm run build

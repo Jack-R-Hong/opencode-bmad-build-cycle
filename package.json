@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle.git"
+    "url": "git+https://github.com/Jack-R-Hong/opencode-bmad-build-cycle.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle/issues"
+    "url": "https://github.com/Jack-R-Hong/opencode-bmad-build-cycle/issues"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle#readme",
+  "homepage": "https://github.com/Jack-R-Hong/opencode-bmad-build-cycle#readme",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
