@@ -26,7 +26,7 @@ Add to your `~/.config/opencode/opencode.json`:
 ### Method 2: npm
 
 ```bash
-bun add opencode-bmad-build-cycle
+npm install opencode-bmad-build-cycle
 ```
 
 Then add to `opencode.json`:
@@ -46,8 +46,8 @@ Clone and link locally:
 ```bash
 git clone https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle.git
 cd opencode-bmad-build-cycle
-bun install
-bun run build
+npm install
+npm run build
 ```
 
 Add to `opencode.json`:
@@ -140,19 +140,19 @@ Execute /bmad-bmm-dev-story. Story: {story_path}. Autonomous mode. Commit when d
 
 - [OpenCode](https://opencode.ai) v1.0+
 - [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) (recommended)
-- Bun runtime (for building from source)
+- Node.js 18+ (for building from source)
 
 ## Development
 
 ```bash
 # Install dependencies
-bun install
+npm install
 
 # Build
-bun run build
+npm run build
 
 # Watch mode
-bun run dev
+npm run dev
 ```
 
 ## License

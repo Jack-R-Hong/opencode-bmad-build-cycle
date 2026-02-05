@@ -1,4 +1,5 @@
 import type { Plugin } from "@opencode-ai/plugin";
+import { tool } from "@opencode-ai/plugin/tool";
 import { readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
@@ -17,32 +18,27 @@ const loadSkill = (name: string): string => {
 const buildCycleSkill = loadSkill("build-cycle");
 const taskLoggerSkill = loadSkill("task-logger");
 
-export default {
-  name: "opencode-bmad-build-cycle",
-  version: "1.0.0",
+const BmadBuildCyclePlugin: Plugin = async (_ctx) => {
+  return {
+    tool: {
+      bmad_build_cycle: tool({
+        description:
+          "BMAD Build Cycle orchestration - Sprint planning, story creation, implementation, and review with task logging. Use /bmad-build-cycle to load.",
+        args: {},
+        async execute() {
+          return buildCycleSkill || "Build cycle skill not found";
+        },
+      }),
+      task_logger: tool({
+        description:
+          "Log subagent task execution details including model, timing, conditions, and results to logs/ folder. Use /task-logger to load.",
+        args: {},
+        async execute() {
+          return taskLoggerSkill || "Task logger skill not found";
+        },
+      }),
+    },
+  };
+};
 
-  commands: [
-    {
-      name: "bmad-build-cycle",
-      description:
-        "BMAD Build Cycle orchestration - Sprint planning, story creation, implementation, and review with task logging",
-      run: async () => {
-        return {
-          type: "text" as const,
-          content: buildCycleSkill,
-        };
-      },
-    },
-    {
-      name: "task-logger",
-      description:
-        "Log subagent task execution details including model, timing, conditions, and results to logs/ folder",
-      run: async () => {
-        return {
-          type: "text" as const,
-          content: taskLoggerSkill,
-        };
-      },
-    },
-  ],
-} satisfies Plugin;
+export default BmadBuildCyclePlugin;
