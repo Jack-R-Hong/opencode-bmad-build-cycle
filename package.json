@@ -1,0 +1,45 @@
+{
+  "name": "opencode-bmad-build-cycle",
+  "version": "1.0.0",
+  "description": "BMAD Build Cycle orchestration skill for OpenCode - Sprint planning, story creation, implementation, and review with task logging",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "keywords": [
+    "opencode",
+    "plugin",
+    "bmad",
+    "build-cycle",
+    "sprint",
+    "agile",
+    "task-logging"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/opencode-bmad-build-cycle#readme",
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target bun --format esm && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --declaration --outDir dist",
+    "dev": "bun run build --watch",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.1.51"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md"
+  ]
+}
